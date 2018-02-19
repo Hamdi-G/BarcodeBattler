@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Barcode-Battler</string>
+    <string name="app_name">Gladiator BarcodeBattler</string>
+    <string name="title_activity_character_list">Choisissez votre personnage</string>
+    <string name="title_activity_weapon_list">Choisissez votre arme</string>
+    <string name="title_activity_shield_list">Choisissez votre bouclier</string>
 </resources>

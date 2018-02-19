@@ -1,5 +1,9 @@
 package fr.mbds.hamdigazzah.barcode_battler.Model;
 
+import android.util.Log;
+
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * Created by hamdigazzah on 26/10/2017.
  */
@@ -14,16 +18,38 @@ public class Character {
     private Shield shield;
     private String imagePath;
 
-    public Character() {}
+    public Character() {
+    }
 
-    public Character(int id, String name, String code, int life, Weapon weapon, Shield shield, String imagePath) {
+    public Character(int id, String name, String code, int life, String imagePath) {
         this.id = id;
         this.name = name;
         this.code = code;
         this.life = life;
-        this.weapon = weapon;
-        this.shield = shield;
         this.imagePath = imagePath;
+    }
+
+    public Integer attack(Character c) {
+        Log.d("life", String.valueOf(c.life));
+        Log.d("damage", String.valueOf(this.weapon.getDemage()));
+        Log.d("capacity", String.valueOf(c.shield.getCapacity()));
+        Log.d("difference", String.valueOf((this.weapon.getDemage() - c.shield.getCapacity())));
+
+        int attackDamage = randomInt(this.weapon.getDemage());
+        int defenseCapacity = randomInt(c.shield.getCapacity());
+        if ((attackDamage - defenseCapacity) > 0) {
+            c.life -= (attackDamage - defenseCapacity);
+            return (attackDamage - defenseCapacity);
+        }
+        return 0;
+    }
+
+    private static Integer randomInt(int value) {
+        return ThreadLocalRandom.current().nextInt(0, value + 1);
+    }
+
+    public void getPotion(Potion p) {
+        this.life += p.getEnergy();
     }
 
     public int getId() {
@@ -80,10 +106,6 @@ public class Character {
 
     public void setShield(Shield shield) {
         this.shield = shield;
-    }
-
-    public void attack(Character c) {
-        this.life -= c.getWeapon().getDemage() - this.shield.getCapacity();
     }
 
 }

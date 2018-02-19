@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e1d0b2"
+    tools:context="fr.mbds.hamdigazzah.barcode_battler.BattleActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <nl.dionsegijn.konfetti.KonfettiView
+            android:id="@+id/konfettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="10dp"
+                        android:text="Vous" />
+
+                    <ProgressBar
+                        android:id="@+id/p_life_progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/textView10"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/textView10" />
+
+                    <TextView
+                        android:id="@+id/p_character_name_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/p_life_progressBar"
+                        android:layout_toEndOf="@+id/textView10"
+                        android:text="Name" />
+
+                    <ImageView
+                        android:id="@+id/p_character_imageView"
+                        android:layout_width="120dp"
+                        android:layout_height="160dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/p_character_name_textView"
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                    <ImageView
+                        android:id="@+id/p_weapon_imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:layout_alignStart="@+id/textView10"
+                        android:layout_alignTop="@+id/p_character_imageView"
+                        android:layout_marginStart="12dp"
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                    <ImageView
+                        android:id="@+id/p_shield_imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:layout_alignBottom="@+id/p_character_imageView"
+                        android:layout_alignStart="@+id/p_weapon_imageView"
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                    <Button
+                        android:id="@+id/attack_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignStart="@+id/textView10"
+                        android:layout_marginStart="29dp"
+                        android:layout_weight="1"
+                        android:background="#7e4e24"
+                        android:text="Attaquer"
+                        android:textColor="#ffffff" />
+
+                    <Button
+                        android:id="@+id/potion_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_weight="1"
+                        android:text="potion"
+                        android:backgroundint="#7e4e24"
+                        android:textColor="#ffffff"/>
+
+                    <ProgressBar
+                        android:id="@+id/p_weapon_progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/p_weapon_imageView"
+                        android:layout_below="@+id/p_weapon_imageView" />
+
+                    <ProgressBar
+                        android:id="@+id/p_shield_progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/p_shield_imageView"
+                        android:layout_below="@+id/p_shield_imageView" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="VS." />
+
+                    <TextView
+                        android:id="@+id/comment_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView14"
+                        android:layout_marginTop="31dp"
+                        android:gravity="center"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="10dp"
+                        android:text="CPU" />
+
+                    <ProgressBar
+                        android:id="@+id/c_life_progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/textView12"
+                        android:layout_marginTop="10dp"
+                        android:layout_toStartOf="@+id/textView12" />
+
+                    <TextView
+                        android:id="@+id/c_character_name_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/c_life_progressBar"
+                        android:layout_toStartOf="@+id/textView12"
+                        android:text="Name" />
+
+                    <ImageView
+                        android:id="@+id/c_character_imageView"
+                        android:layout_width="120dp"
+                        android:layout_height="160dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/c_character_name_textView"
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                    <ImageView
+                        android:id="@+id/c_weapon_imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:layout_alignTop="@+id/c_character_imageView"
+                        android:layout_marginStart="11dp"
+                        android:layout_toEndOf="@+id/c_character_imageView"
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                    <ImageView
+                        android:id="@+id/c_shield_imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:layout_alignBottom="@+id/c_character_imageView"
+                        android:layout_alignStart="@+id/c_weapon_imageView"
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                    <ProgressBar
+                        android:id="@+id/c_weapon_progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/c_weapon_imageView"
+                        android:layout_below="@+id/c_weapon_imageView" />
+
+                    <ProgressBar
+                        android:id="@+id/c_shield_progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/c_shield_imageView"
+                        android:layout_below="@+id/c_shield_imageView" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

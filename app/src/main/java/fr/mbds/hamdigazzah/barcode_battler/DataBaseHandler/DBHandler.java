@@ -37,8 +37,6 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_NAME_C = "name";
     private static final String KEY_CODE_C = "code";
     private static final String KEY_LIFE_C = "life";
-    private static final String KEY_WEAPON_ID_C = "weapon";
-    private static final String KEY_SHIELD_ID_C = "shield";
     private static final String KEY_IMAGEPATH_C = "imagePath";
 
     // Shield Table Columns names
@@ -74,8 +72,7 @@ public class DBHandler extends SQLiteOpenHelper {
         // Creating character table
         String CREATE_CHARACTER_TABLE = "CREATE TABLE " + TABLE_CHARACTER + "("
                 + KEY_ID_C + " INTEGER PRIMARY KEY," + KEY_NAME_C + " TEXT,"
-                + KEY_CODE_C + " TEXT," + KEY_LIFE_C + " TEXT,"
-                + KEY_WEAPON_ID_C + " INTEGER," + KEY_SHIELD_ID_C + " INTEGER,"
+                + KEY_CODE_C + " TEXT," + KEY_LIFE_C + " INTEGER,"
                 + KEY_IMAGEPATH_C + " TEXT" + ")";
         db.execSQL(CREATE_CHARACTER_TABLE);
 
@@ -132,8 +129,6 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME_C, c.getName());
         values.put(KEY_CODE_C, c.getCode());
         values.put(KEY_LIFE_C, c.getLife());
-        values.put(KEY_WEAPON_ID_C, c.getWeapon().getId());
-        values.put(KEY_SHIELD_ID_C, c.getShield().getId());
         values.put(KEY_IMAGEPATH_C, c.getImagePath());
 
         // Inserting Row
@@ -187,15 +182,14 @@ public class DBHandler extends SQLiteOpenHelper {
     public Character getCharacter(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_CHARACTER, new String[]{KEY_ID_C,
-                        KEY_NAME_C, KEY_CODE_C, KEY_LIFE_C, KEY_WEAPON_ID_C,
-                        KEY_SHIELD_ID_C, KEY_IMAGEPATH_C}, KEY_ID_C + "=?",
+                        KEY_NAME_C, KEY_CODE_C, KEY_LIFE_C, KEY_IMAGEPATH_C}, KEY_ID_C + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
         Character c = new Character(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1), cursor.getString(2), Integer.parseInt(cursor.getString(3)),
-                getWeapon(Integer.parseInt(cursor.getString(4))), getShield(Integer.parseInt(cursor.getString(5))), cursor.getString(6));
-        // return business card
+                cursor.getString(4));
+        // return character
         return c;
     }
 
@@ -203,7 +197,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public Shield getShield(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_SHIELD, new String[]{KEY_ID_S,
-                        KEY_NAME_S, KEY_CODE_S, KEY_CAPACITY_S, KEY_IMAGEPATH_C}, KEY_ID_S + "=?",
+                        KEY_NAME_S, KEY_CODE_S, KEY_CAPACITY_S, KEY_IMAGEPATH_S}, KEY_ID_S + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -260,9 +254,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 c.setName(cursor.getString(1));
                 c.setCode(cursor.getString(2));
                 c.setLife(Integer.parseInt(cursor.getString(3)));
-                c.setWeapon(getWeapon(Integer.parseInt(cursor.getString(4))));
-                c.setShield(getShield(Integer.parseInt(cursor.getString(5))));
-                c.setImagePath(cursor.getString(6));
+                c.setImagePath(cursor.getString(4));
                 // Adding character to list
                 cList.add(c);
             } while (cursor.moveToNext());
@@ -393,8 +385,6 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME_C, c.getName());
         values.put(KEY_CODE_C, c.getCode());
         values.put(KEY_LIFE_C, c.getLife());
-        values.put(KEY_WEAPON_ID_C, c.getWeapon().getId());
-        values.put(KEY_SHIELD_ID_C, c.getShield().getId());
         values.put(KEY_IMAGEPATH_C, c.getImagePath());
         // updating row
         return db.update(TABLE_CHARACTER, values, KEY_ID_C + " = ?",

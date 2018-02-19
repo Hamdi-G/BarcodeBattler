@@ -6,13 +6,50 @@
     android:layout_height="match_parent"
     tools:context="fr.mbds.hamdigazzah.barcode_battler.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/homebackground"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="58dp">
+
+
+        <Button
+            android:id="@+id/button_start_local"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/push_button"
+            android:layout_alignBottom="@+id/push_button"
+            android:layout_alignParentStart="true"
+            android:background="#7e4e24"
+            android:padding="15dp"
+            android:text="jouer en local"
+            android:textColor="#ffffff" />
+
+
+        <Button
+            android:id="@+id/push_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="18dp"
+            android:padding="15dp"
+            android:text="jouer en reseau"
+            android:background="#7e4e24"
+            android:textColor="#ffffff" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/push_button"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="150dp"
+            app:srcCompat="@drawable/title" />
+
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4ead7"
+    tools:context="fr.mbds.hamdigazzah.barcode_battler.BeforeBattleActivity">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="374dp"
+            android:layout_margin="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/character_name_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:text="character name"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/character_imageView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/character_name_textView"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                <TextView
+                    android:id="@+id/weapon_name_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/character_imageView"
+                    android:layout_marginStart="24dp"
+                    android:layout_toEndOf="@+id/character_imageView"
+                    android:text="Weapon name" />
+
+                <ImageView
+                    android:id="@+id/weapon_image_view"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignStart="@+id/weapon_name_textView"
+                    android:layout_below="@+id/weapon_name_textView"
+                    app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                <TextView
+                    android:id="@+id/shield_name_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/weapon_image_view"
+                    android:layout_below="@+id/weapon_image_view"
+                    android:layout_marginTop="13dp"
+                    android:text="Shield name" />
+
+                <ImageView
+                    android:id="@+id/shield_imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignBottom="@+id/character_imageView"
+                    android:layout_alignStart="@+id/shield_name_textView"
+                    app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/character_imageView"
+                    android:layout_below="@+id/character_imageView"
+                    android:layout_marginTop="33dp"
+                    android:text="Point de vie" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView6"
+                    android:layout_below="@+id/textView6"
+                    android:layout_marginTop="20dp"
+                    android:text="Attaque" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView7"
+                    android:layout_below="@+id/textView7"
+                    android:layout_marginTop="20dp"
+                    android:text="Défense " />
+
+                <ProgressBar
+                    android:id="@+id/life_progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView7"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/textView6" />
+
+                <ProgressBar
+                    android:id="@+id/attack_progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView7"
+                    android:layout_alignStart="@+id/life_progressBar"
+                    android:layout_marginEnd="20dp" />
+
+                <ProgressBar
+                    android:id="@+id/defense_progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/attack_progressBar"
+                    android:layout_alignTop="@+id/textView8"
+                    android:layout_marginEnd="20dp" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/button_start_battle"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:text="Commencer" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4ead7"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/weapon_image_view_item"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/weapon_image_view_item"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/weapon_text_view_name"
+        android:textSize="17sp"
+        android:textStyle="normal|bold" />
+
+    <ProgressBar
+        android:id="@+id/weapon_damage_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/weapon_image_view_item"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_toEndOf="@+id/weapon_textView" />
+
+    <TextView
+        android:id="@+id/weapon_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/weapon_damage_progress_bar"
+        android:layout_toEndOf="@+id/weapon_image_view_item"
+        android:text="Capacité d'attaque :" />
+
+</RelativeLayout>

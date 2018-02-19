@@ -2,13 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.mbds.hamdigazzah.barcode_battler">
 
+    <!-- To automatically install the barcode detection libraries on the devices that try to run this app -->
+    <meta-data
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:value="barcode" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/battle_background4"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/battle_background4"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service android:enabled="true" android:name=".Services.BackgroundSoundService" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +28,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Character.CharacterListActivity"
+            android:label="@string/title_activity_character_list" />
+        <activity
+            android:name=".Character.CharacterAddActivity"
+            android:label="Nouveau Personnage"/>
+        <activity
+            android:name=".Weapon.WeaponListActivity"
+            android:label="@string/title_activity_weapon_list" />
+        <activity
+            android:name=".Weapon.WeaponAddActivity"
+            android:label="Nouvelle Arme"/>
+        <activity
+            android:name=".Shield.ShieldListActivity"
+            android:label="@string/title_activity_shield_list" />
+        <activity
+            android:name=".Shield.ShieldAddActivity"
+            android:label="Nouveau Bouclier"/>
+        <activity android:name=".BattleActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".BeforeBattleActivity"
+            android:label="Prêt!"/>
+
     </application>
 
 </manifest>
