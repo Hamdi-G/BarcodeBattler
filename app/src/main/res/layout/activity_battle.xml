@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
         <nl.dionsegijn.konfetti.KonfettiView
             android:id="@+id/konfettiView"
@@ -106,7 +107,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_weight="1"
                         android:text="potion"
-                        android:backgroundint="#7e4e24"
+                        android:background="#7e4e24"
                         android:textColor="#ffffff"/>
 
                     <ProgressBar

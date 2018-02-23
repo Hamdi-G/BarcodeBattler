@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+import fr.mbds.hamdigazzah.barcode_battler.Utils.Utils;
+
 /**
  * Created by hamdigazzah on 26/10/2017.
  */
@@ -30,22 +32,14 @@ public class Character {
     }
 
     public Integer attack(Character c) {
-        Log.d("life", String.valueOf(c.life));
-        Log.d("damage", String.valueOf(this.weapon.getDemage()));
-        Log.d("capacity", String.valueOf(c.shield.getCapacity()));
-        Log.d("difference", String.valueOf((this.weapon.getDemage() - c.shield.getCapacity())));
 
-        int attackDamage = randomInt(this.weapon.getDemage());
-        int defenseCapacity = randomInt(c.shield.getCapacity());
+        int attackDamage = Utils.randomInt(this.weapon.getDemage());
+        int defenseCapacity = Utils.randomInt(c.shield.getCapacity());
         if ((attackDamage - defenseCapacity) > 0) {
             c.life -= (attackDamage - defenseCapacity);
             return (attackDamage - defenseCapacity);
         }
         return 0;
-    }
-
-    private static Integer randomInt(int value) {
-        return ThreadLocalRandom.current().nextInt(0, value + 1);
     }
 
     public void getPotion(Potion p) {

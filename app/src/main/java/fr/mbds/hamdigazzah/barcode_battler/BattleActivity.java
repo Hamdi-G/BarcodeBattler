@@ -28,6 +28,7 @@ import fr.mbds.hamdigazzah.barcode_battler.Model.Weapon;
 import fr.mbds.hamdigazzah.barcode_battler.Services.BackgroundSoundService;
 import fr.mbds.hamdigazzah.barcode_battler.Utils.CharacterGenerator;
 import fr.mbds.hamdigazzah.barcode_battler.Utils.ShieldGenerator;
+import fr.mbds.hamdigazzah.barcode_battler.Utils.Utils;
 import fr.mbds.hamdigazzah.barcode_battler.Utils.WeaponGenerator;
 
 import nl.dionsegijn.konfetti.KonfettiView;
@@ -79,8 +80,8 @@ public class BattleActivity extends AppCompatActivity {
 
         layout.setBackground(getResources().getDrawable(R.drawable.battle_background4));
 
-        attackbButton.setEnabled(false);
-        potionButton.setEnabled(false);
+        attackbButton.setVisibility(View.GONE);
+        potionButton.setVisibility(View.GONE);
 
         player = new MediaPlayer();
         player2 = new MediaPlayer();
@@ -112,7 +113,7 @@ public class BattleActivity extends AppCompatActivity {
 
                 if (CPUCharacter.getLife() > 0) {
                     attackEnemy();
-                    attackbButton.setEnabled(false);
+                    attackbButton.setVisibility(View.GONE);;
 
                 }
                 if (playerCharacter.getLife() > 0) {
@@ -121,7 +122,7 @@ public class BattleActivity extends AppCompatActivity {
                             new Runnable() {
                                 public void run() {
                                     reciveAttack();
-                                    attackbButton.setEnabled(true);
+                                    attackbButton.setVisibility(View.VISIBLE);
                                 }
                             }, 4000);
                 }
@@ -131,7 +132,9 @@ public class BattleActivity extends AppCompatActivity {
         potionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gameWin();
+                playerCharacter.setLife(playerCharacter.getLife() + Utils.randomInt(100 - playerCharacter.getLife()));
+                playerLife.setProgress(playerCharacter.getLife());
+                potionButton.setVisibility(View.GONE);
             }
         });
 
@@ -335,8 +338,8 @@ public class BattleActivity extends AppCompatActivity {
                                                                 new Runnable() {
                                                                     public void run() {
                                                                         commentTextView.setText("");
-                                                                        attackbButton.setEnabled(true);
-                                                                        potionButton.setEnabled(true);
+                                                                        attackbButton.setVisibility(View.VISIBLE);
+                                                                        potionButton.setVisibility(View.VISIBLE);
                                                                     }
                                                                 }, 2000);
                                                     }
