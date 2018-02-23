@@ -102,7 +102,7 @@ public class WeaponListActivity extends AppCompatActivity {
             ImageView image = (ImageView) convertView.findViewById(R.id.weapon_image_view_item);
             TextView text_view_name = (TextView)convertView.findViewById(R.id.weapon_text_view_name);
             ProgressBar damage = (ProgressBar) convertView.findViewById(R.id.weapon_damage_progress_bar);
-            damage.setMax(20);
+            damage.setMax(25);
 
             int id = getResources().getIdentifier("fr.mbds.hamdigazzah.barcode_battler:drawable/" + weaponList.get(position).getImagePath(), null, null);
             image.setImageDrawable(getResources().getDrawable(id));

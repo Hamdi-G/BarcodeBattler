@@ -13,16 +13,16 @@ import fr.mbds.hamdigazzah.barcode_battler.Model.Character;
 public class CharacterGenerator {
 
     private ArrayList<Character> characterArrayList = new ArrayList<Character>() {{
-        add(new Character(0, "character0", "1234",  100, "character0"));
-        add(new Character(1, "character1", "1234",  40, "character1"));
-        add(new Character(2, "character2", "1234",  50, "character2"));
-        add(new Character(3, "character3", "1234",  60, "character3"));
-        add(new Character(4, "character4", "1234",  30, "character4"));
-        add(new Character(5, "character5", "1234",  100, "character5"));
-        add(new Character(6, "character6", "1234",  100, "character6"));
-        add(new Character(7, "character7", "1234",  40, "character7"));
-        add(new Character(8, "character8", "1234",  40, "character8"));
-        add(new Character(9, "character9", "1234",  40, "character9"));
+        add(new Character(0, "Domitia", "1234",  100, "character0"));
+        add(new Character(1, "Oenomaus", "1234",  40, "character1"));
+        add(new Character(2, "Hamilcar", "1234",  50, "character2"));
+        add(new Character(3, "Segovax", "1234",  60, "character3"));
+        add(new Character(4, "Ramel", "1234",  30, "character4"));
+        add(new Character(5, "Spartacus", "1234",  100, "character5"));
+        add(new Character(6, "Auctus", "1234",  100, "character6"));
+        add(new Character(7, "Mercato", "1234",  40, "character7"));
+        add(new Character(8, "Lovis", "1234",  40, "character8"));
+        add(new Character(9, "Agron", "1234",  40, "character9"));
     }};
 
     public Character generate(String barCode) {

@@ -60,7 +60,7 @@ public class WeaponAddActivity extends AppCompatActivity {
         barCodeTV = (TextView) findViewById(R.id.weapon_barcodeTV);
         weaponImage = (ImageView) findViewById(R.id.weapon_image_view);
         damage = (ProgressBar) findViewById(R.id.weapon_damage_progress_bar);
-        damage.setMax(20);
+        damage.setMax(25);
         button = (Button) findViewById(R.id.weapon_buttonAdd);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

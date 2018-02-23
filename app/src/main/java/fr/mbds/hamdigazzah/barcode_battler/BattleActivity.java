@@ -132,9 +132,11 @@ public class BattleActivity extends AppCompatActivity {
         potionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                playerCharacter.setLife(playerCharacter.getLife() + Utils.randomInt(100 - playerCharacter.getLife()));
+                int potion =  Utils.randomInt(100 - playerCharacter.getLife());
+                playerCharacter.setLife(playerCharacter.getLife() + potion);
                 playerLife.setProgress(playerCharacter.getLife());
                 potionButton.setVisibility(View.GONE);
+                commentTextView.setText("vous avez gagné un potion de " + potion + " points!");
             }
         });
 
@@ -150,7 +152,7 @@ public class BattleActivity extends AppCompatActivity {
         playerWeaponImageView = (ImageView) findViewById(R.id.p_weapon_imageView);
         playerShieldImageView = (ImageView) findViewById(R.id.p_shield_imageView);
 
-        playerWeaponDamage.setMax(20);
+        playerWeaponDamage.setMax(25);
         playerShieldCapacity.setMax(20);
 
         Intent i = getIntent();
@@ -187,7 +189,7 @@ public class BattleActivity extends AppCompatActivity {
         CPUWeaponImageView = (ImageView) findViewById(R.id.c_weapon_imageView);
         CPUShieldImageView = (ImageView) findViewById(R.id.c_shield_imageView);
 
-        CPUWeaponDamage.setMax(20);
+        CPUWeaponDamage.setMax(25);
         CPUShieldCapacity.setMax(20);
 
         CPUCharacter = new CharacterGenerator().generate(generateRandomBarCode());

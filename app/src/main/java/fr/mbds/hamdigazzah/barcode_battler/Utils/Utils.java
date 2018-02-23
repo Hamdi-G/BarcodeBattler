@@ -9,6 +9,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Utils {
 
     public static Integer randomInt(int value) {
-        return ThreadLocalRandom.current().nextInt(0, value + 1);
+        return ThreadLocalRandom.current().nextInt(1, value + 1);
     }
 }

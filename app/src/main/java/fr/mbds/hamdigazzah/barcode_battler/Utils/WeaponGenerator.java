@@ -14,13 +14,13 @@ import fr.mbds.hamdigazzah.barcode_battler.Model.Weapon;
 public class WeaponGenerator {
 
     private ArrayList<Weapon> weaponArrayList = new ArrayList<Weapon>() {{
-        add(new Weapon(0, "Weapon0", "1234",  5, "weapon0"));
-        add(new Weapon(1, "Weapon1", "1234",  10, "weapon1"));
-        add(new Weapon(2, "Weapon2", "1234",  7, "weapon2"));
-        add(new Weapon(3, "Weapon3", "1234",  15, "weapon3"));
-        add(new Weapon(4, "Weapon4", "1234",  18, "weapon4"));
-        add(new Weapon(5, "Weapon5", "1234",  13, "weapon5"));
-        add(new Weapon(6, "Weapon6", "1234",  13, "weapon6"));
+        add(new Weapon(0, "Gauntlet", "1234",  10, "weapon0"));
+        add(new Weapon(1, "Baselard", "1234",  20, "weapon1"));
+        add(new Weapon(2, "Emeici", "1234",  14, "weapon2"));
+        add(new Weapon(3, "Maduvu", "1234",  25, "weapon3"));
+        add(new Weapon(4, "Piandao", "1234",  18, "weapon4"));
+        add(new Weapon(5, "Chokutō", "1234",  19, "weapon5"));
+        add(new Weapon(6, "Nagamaki", "1234",  25, "Weapon6"));
     }};
 
     public Weapon generate(String barCode) {

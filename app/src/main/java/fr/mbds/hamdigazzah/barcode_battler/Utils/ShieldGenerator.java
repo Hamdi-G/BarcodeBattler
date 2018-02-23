@@ -13,12 +13,12 @@ import fr.mbds.hamdigazzah.barcode_battler.Model.Shield;
 public class ShieldGenerator {
 
     private ArrayList<Shield> shieldArrayList = new ArrayList<Shield>() {{
-        add(new Shield(0, "Shield0", "1234",  5, "shield0"));
-        add(new Shield(1, "Shield1", "1234",  10, "shield1"));
-        add(new Shield(2, "Shield2", "1234",  7, "shield2"));
-        add(new Shield(3, "Shield3", "1234",  2, "shield3"));
-        add(new Shield(4, "Shield4", "1234",  6, "shield4"));
-        add(new Shield(5, "Shield5", "1234",  8, "shield5"));
+        add(new Shield(0, "Dawn", "1234",  5, "shield0"));
+        add(new Shield(1, "Warsong", "1234",  10, "shield1"));
+        add(new Shield(2, "Wall of Madness", "1234",  7, "shield2"));
+        add(new Shield(3, "Engred Wall", "1234",  2, "shield3"));
+        add(new Shield(4, "War's Buffer", "1234",  6, "shield4"));
+        add(new Shield(5, "Bloodlust", "1234",  8, "shield5"));
     }};
 
     public Shield generate(String barCode) {

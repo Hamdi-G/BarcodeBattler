@@ -35,7 +35,7 @@ public class BeforeBattleActivity extends AppCompatActivity {
         ProgressBar defenserogressBar = (ProgressBar) findViewById(R.id.defense_progressBar);
         Button buttonStart = (Button) findViewById(R.id.button_start_battle);
 
-        attackProgressBar.setMax(20);
+        attackProgressBar.setMax(25);
         defenserogressBar.setMax(20);
 
         DBHandler db = new DBHandler(this);
